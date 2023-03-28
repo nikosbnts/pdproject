@@ -1,0 +1,324 @@
+:root{
+    --green: rgb(161, 194, 152);
+    --yellow: rgb(251, 242, 207);
+    --lightgreen: rgb(198, 235, 197);
+    --red: rgb(250, 112, 112);
+    --lightyellow:rgb(254, 250, 224);
+    
+
+}
+
+*{
+    box-sizing: boarder-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Open Sans';
+}
+
+body{
+    background-color:rgb(254, 250, 224);
+}
+.navbar{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index:999;
+    min-width:0px;
+    box-shadow: 0 4px 4px 0 var(--green);
+    position: sticky;
+
+    
+}
+
+.navbar_container img{
+    height: 25.6px;
+    width: 200px;
+}
+
+
+.navbar_container{
+    display:flex;
+    justify-content: space-between;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+}
+
+#navbar_logo{
+    background-image: url("images/camp1.png");
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.navbar_menu{
+    
+    display: flex;
+    align-items:center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar_item{
+    height:80px;
+}
+
+.navbar_links{
+    color:var(--green);
+    display: flex;
+    font-size:20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+    padding:0 1rem;
+    height: 100%;
+}
+
+.navbar_btn{
+    color:var(--lightyellow);
+    background-color:var(--green);
+    border-radius:100px;
+    display: flex;
+    font-size:20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+    padding:0 1rem;
+    margin-left:15px;
+    height: 60%;
+    margin-top:15px;
+    
+}
+
+.navbar_links:hover{
+    color: var(--red);
+    transition: all 0.3s ease;
+}
+
+
+.navbar_btn:hover{
+    color: var(--green);
+    background-color:var(--red);
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 960px){
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar_menu{
+        display: grid;
+        grid-template-columns:auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+       
+    }
+
+    .navbar_menu.active{
+        box-shadow: rgba(60,60,60,255) 0px 3px 8px;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        margin-left:60%;
+        height:40vh;
+        width:40vw;
+        font-size:1.6rem;
+        background-color:rgb(255, 255, 255);
+    }
+    #navbar_logo{
+        padding-left: 15px;
+    }    
+
+    .navbar_toggle .bar{
+        width:25px;
+        height:3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: var(--green);
+    }
+
+    .navbar_item{
+        width:100%;
+    }
+    .navba_links{
+        text-align:center;
+        padding: 0rem;
+        width:100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right:5%;
+        transform: translate(5% , 20%);
+        justify-content:center;
+        align-items:center;
+    }
+
+    .navbar_btn{
+        position:relative;
+        width:100%;
+        background-color:white;
+        color:var(--green);
+    }
+
+    .navbar_toggle .bar{
+        display: block;
+        cursor: pointer;
+       
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+
+.content{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+
+.container1 {
+    display:flex;
+    position:relative;
+    min-height: 600px;
+    width: 100%; 
+    background-image: linear-gradient(
+      to left, transparent, var(--lightgreen)
+    ), url("images/bg4.jpg");
+
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:  10% 50%;
+
+
+}
+
+.container1_box{
+    display:flex;
+    flex-direction:column;
+    padding-bottom:15px;
+    padding-right:15px;
+    padding-top: 25px;
+    padding-left:15px;
+    position: absolute;
+    top:25%;
+    width: 40%;
+    align-items:center;
+    justify-content:left;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.container1_box .button {
+    align-items:center;
+    background-color: white;
+    color: var(--green);
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top:60px;
+    border-radius:50px;
+    border: none;
+    outline: none;
+  }
+
+  
+.container1_box .button:hover{
+    background: var(--red);
+    transition: all 0.3s ease;
+    color:var(--yellow);
+}
+  
+.container1_box  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .container1_box .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .container1_box .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .container1_box .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+.container1_text{ 
+    font-weight: bold;
+    text-shadow: 2px 2px  var(--green);
+    color:white;
+    font-size: 40px;
+
+}
+
+.container1_subtext{
+    margin-top:20px;
+    font-size:22px;
+
+    color:white;
+    text-shadow: 2px 1px  var(--green);
+
+
+    
+}
+
